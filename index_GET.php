@@ -1,26 +1,28 @@
-<!DOCTYPE html>
+<!DOCTYPE HTML>
 <html>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <style type="text/css">
     .login {
-        height:180px; width:230px;
+        height:180px;
+        width:230px;
         margin:0;
-        padding:10px;
         border:1px #CCC solid;
+        padding:10px;
     }
     .login input {
-        padding:5px; margin:5px
+        padding:5px;
+        margin:5px
     }
 </style>
 <body>
 <?php
-if ($_SERVER["REQUEST_METHOD"] == "GET"){
+if ($_SERVER["REQUEST_METHOD"] == "GET") {
     $username = $_GET["username"];
-    $password = trim($_GET["password"]);
-
-    if ($username === "admin" && $password === "admin"){
+    $password = $_GET["password"];
+    if ($username == "admin" && $password == "admin") {
         echo "<h2>Welcome <span style='color:red'>" .$username. "</span> to website</h2>";
-    } else {
+    }
+    else{
         echo "<h2><span style='color:red'>Login Error</span></h2>";
     }
 }
@@ -28,8 +30,8 @@ if ($_SERVER["REQUEST_METHOD"] == "GET"){
 <form method="get">
     <div class="login">
         <h2>Login</h2>
-        <input type="text" name="username" size="30" placeholder="username"/>
-        <input type="password" name="password" size="30" placeholder="password"/>
+        <input type="text" name="username" size="30"  placeholder="username" />
+        <input type="password" name="password" size="30" placeholder="password" />
         <input type="submit" value="Sign in"/>
     </div>
 </form>
